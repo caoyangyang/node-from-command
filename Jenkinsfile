@@ -42,10 +42,10 @@ pipeline {
           }
           steps {
             sh "git rev-parse HEAD"
-            sh "docker push tw/node-form-command:${params.Version}"
-            sh "docker tag tw/node-form-command:${params.Version} tw/node-form-command:${env.GIT_VERSION}"
-            sh "docker push tw/node-form-command:${env.GIT_VERSION}"
-            sh "echo \"${env.GIT_VERSION}\"
+            sh "docker push yangyangcao/node-form-command:${params.Version}"
+            sh "docker tag yangyangcao/node-form-command:${params.Version} yangyangcao/node-form-command:${env.GIT_VERSION}"
+            sh "docker push yangyangcao/node-form-command:${env.GIT_VERSION}"
+            sh "echo \"${env.GIT_VERSION}\""
           }
     }
   }

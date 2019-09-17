@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Build Docker Image') {
           steps {
-            sh "docker build . -f docker/Dockerfile -t 'tw/node-form-command':${params.Version} --rm"
+            sh "docker build . -f docker/Dockerfile -t 'tw/node-from-command':${params.Version} --rm"
           }
     }
     stage('Push to Repo') {
@@ -42,9 +42,9 @@ pipeline {
           }
           steps {
             sh "git rev-parse HEAD"
-            sh "docker push yangyangcao/node-form-command:${params.Version}"
-            sh "docker tag yangyangcao/node-form-command:${params.Version} yangyangcao/node-form-command:${env.GIT_VERSION}"
-            sh "docker push yangyangcao/node-form-command:${env.GIT_VERSION}"
+            sh "docker push yangyangcao/node-from-command:${params.Version}"
+            sh "docker tag yangyangcao/node-from-command:${params.Version} yangyangcao/node-from-command:${env.GIT_VERSION}"
+            sh "docker push yangyangcao/node-from-command:${env.GIT_VERSION}"
             sh "echo \"${env.GIT_VERSION}\""
           }
     }

@@ -42,7 +42,7 @@ pipeline {
           }
           steps {
             sh "git rev-parse HEAD"
-            sh "docker login --username= ${env.DockerHubUserName} --password=${env.DockerHubPassword}"
+            sh "docker login --username=${env.DockerHubUserName} --password=${env.DockerHubPassword}"
             sh "docker push yangyangcao/node-from-command:${params.Version}"
             sh "docker tag yangyangcao/node-from-command:${params.Version} yangyangcao/node-from-command:${env.GIT_VERSION}"
             sh "docker push yangyangcao/node-from-command:${env.GIT_VERSION}"

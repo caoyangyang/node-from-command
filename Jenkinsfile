@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Build Docker Image') {
           steps {
-            sh "docker build . -f docker/Dockerfile -t 'tw/node-from-command':${params.Version} --rm"
+            sh "docker build . -f docker/Dockerfile -t 'yangyangcao/node-from-command':${params.Version} --rm"
           }
     }
     stage('Push to Repo') {
